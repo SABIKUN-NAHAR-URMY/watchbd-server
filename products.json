@@ -1,6 +1,74 @@
 [
     {
-        "name": "Women's watches",
+        "name": "Women's Watches",
+        "imgURL": "https://i.ibb.co/NyyMd6b/brigitte-tohm-j8-C66j15n-Ak-unsplash.jpg",
+        "products": [
+            {
+                "picture": "https://i.ibb.co/6Dcx95n/MK3215-main.jpg",
+                "productName": "Michael Kors Women's Darci Three-Hand Two-Tone Stainless Steel Watch",
+                "location": "Dhaka",
+                "resalePrice": 124.99,
+                "originalPrice": 250.00,
+                "yearsUse": "1",
+                "postedDate": "Nov 28, 2022 ",
+                "sellerName": "Tithi khan",
+                "status": "verified",
+                "rating": {"1": "Excellent", "2":"Good", "3":"Fair" },
+                "mobileNumber": "+880 1512399776",
+                "description": "About this Item. Elegant bracelet watch featuring silver-tone sunray dial and sparkling bezel. 39-mm stainless steel case with mineral dial window."
+            },
+            {
+                "picture": "dkd",
+                "productName": "d",
+                "location": "d",
+                "resalePrice": "d",
+                "originalPrice": "d",
+                "yearsUse": "d",
+                "postedDate": "d",
+                "sellerName": "d",
+                "status": "verified",
+                "rating": {"1": "Excellent", "2":"Good", "3":"Fair" },
+                "mobileNumber": "d",
+                "description": "d"
+            }
+        ]
+    },
+    {
+        "name": "Men's Watches",
+        "imgURL": "https://i.ibb.co/93Wnw72/jonathan-francisca-YHbcum51-JB0-unsplash.jpg",
+        "products": [
+            {
+                "picture": "dkd",
+                "productName": "d",
+                "location": "d",
+                "resalePrice": "d",
+                "originalPrice": "d",
+                "yearsUse": "d",
+                "postedDate": "d",
+                "sellerName": "d",
+                "status": "verified",
+                "rating": {"1": "Excellent", "2":"Good", "3":"Fair" },
+                "mobileNumber": "d",
+                "description": "d"
+            },
+            {
+                "picture": "dkd",
+                "productName": "d",
+                "location": "d",
+                "resalePrice": "d",
+                "originalPrice": "d",
+                "yearsUse": "d",
+                "postedDate": "d",
+                "sellerName": "d",
+                "status": "verified",
+                "rating": {"1": "Excellent", "2":"Good", "3":"Fair" },
+                "mobileNumber": "d",
+                "description": "d"
+            }
+        ]
+    },
+    {
+        "name": "Kid's Watches",
         "imgURL": "https://i.ibb.co/8bbsg7T/98297f3a5279c5d346e50380a29dc56b.jpg",
         "products": [
             {

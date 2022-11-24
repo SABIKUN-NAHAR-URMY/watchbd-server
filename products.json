@@ -1,0 +1,36 @@
+[
+    {
+        "name": "Women's watches",
+        "imgURL": "https://i.ibb.co/8bbsg7T/98297f3a5279c5d346e50380a29dc56b.jpg",
+        "products": [
+            {
+                "picture": "dkd",
+                "productName": "d",
+                "location": "d",
+                "resalePrice": "d",
+                "originalPrice": "d",
+                "yearsUse": "d",
+                "postedDate": "d",
+                "sellerName": "d",
+                "status": "verified",
+                "rating": {"1": "Excellent", "2":"Good", "3":"Fair" },
+                "mobileNumber": "d",
+                "description": "d"
+            },
+            {
+                "picture": "dkd",
+                "productName": "d",
+                "location": "d",
+                "resalePrice": "d",
+                "originalPrice": "d",
+                "yearsUse": "d",
+                "postedDate": "d",
+                "sellerName": "d",
+                "status": "verified",
+                "rating": {"1": "Excellent", "2":"Good", "3":"Fair" },
+                "mobileNumber": "d",
+                "description": "d"
+            }
+        ]
+    }
+]

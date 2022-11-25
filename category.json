@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Women's Watches",
+        "imgURL": "https://i.ibb.co/NyyMd6b/brigitte-tohm-j8-C66j15n-Ak-unsplash.jpg",
+        "category_id": 1
+    },
+    {
+        "name": "Men's Watches",
+        "imgURL": "https://i.ibb.co/93Wnw72/jonathan-francisca-YHbcum51-JB0-unsplash.jpg",
+        "category_id": 2
+    },
+    {
+        "name": "Kid's Watches",
+        "imgURL": "https://i.ibb.co/8bbsg7T/98297f3a5279c5d346e50380a29dc56b.jpg",
+        "category_id": 3
+    }
+]

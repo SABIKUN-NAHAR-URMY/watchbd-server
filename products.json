@@ -1,104 +1,100 @@
 [
     {
-        "name": "Women's Watches",
-        "imgURL": "https://i.ibb.co/NyyMd6b/brigitte-tohm-j8-C66j15n-Ak-unsplash.jpg",
-        "products": [
-            {
-                "picture": "https://i.ibb.co/6Dcx95n/MK3215-main.jpg",
-                "productName": "Michael Kors Women's Darci Three-Hand Two-Tone Stainless Steel Watch",
-                "location": "Dhaka",
-                "resalePrice": 124.99,
-                "originalPrice": 250.00,
-                "yearsUse": "1",
-                "postedDate": "Nov 28, 2022 ",
-                "sellerName": "Tithi khan",
-                "status": "verified",
-                "rating": {"1": "Excellent", "2":"Good", "3":"Fair" },
-                "mobileNumber": "+880 1512399776",
-                "description": "About this Item. Elegant bracelet watch featuring silver-tone sunray dial and sparkling bezel. 39-mm stainless steel case with mineral dial window."
-            },
-            {
-                "picture": "dkd",
-                "productName": "d",
-                "location": "d",
-                "resalePrice": "d",
-                "originalPrice": "d",
-                "yearsUse": "d",
-                "postedDate": "d",
-                "sellerName": "d",
-                "status": "verified",
-                "rating": {"1": "Excellent", "2":"Good", "3":"Fair" },
-                "mobileNumber": "d",
-                "description": "d"
-            }
-        ]
+        "category_id": 1,
+        "picture": "https://i.ibb.co/6Dcx95n/MK3215-main.jpg",
+        "productName": "Michael Kors Women's Darci Three-Hand Two-Tone Stainless Steel Watch",
+        "location": "Dhaka",
+        "resalePrice": 124.99,
+        "originalPrice": 250.00,
+        "yearsUse": "1",
+        "postedDate": "March 28, 2022 ",
+        "sellerName": "Tithi khan",
+        "status": "Unverified",
+        "rating": {
+            "1": "Excellent",
+            "2": "Good",
+            "3": "Fair"
+        },
+        "mobileNumber": "+880 1512399776",
+        "description": "About this Item. Elegant bracelet watch featuring silver-tone sunray dial and sparkling bezel. 39-mm stainless steel case with mineral dial window."
     },
     {
-        "name": "Men's Watches",
-        "imgURL": "https://i.ibb.co/93Wnw72/jonathan-francisca-YHbcum51-JB0-unsplash.jpg",
-        "products": [
-            {
-                "picture": "dkd",
-                "productName": "d",
-                "location": "d",
-                "resalePrice": "d",
-                "originalPrice": "d",
-                "yearsUse": "d",
-                "postedDate": "d",
-                "sellerName": "d",
-                "status": "verified",
-                "rating": {"1": "Excellent", "2":"Good", "3":"Fair" },
-                "mobileNumber": "d",
-                "description": "d"
-            },
-            {
-                "picture": "dkd",
-                "productName": "d",
-                "location": "d",
-                "resalePrice": "d",
-                "originalPrice": "d",
-                "yearsUse": "d",
-                "postedDate": "d",
-                "sellerName": "d",
-                "status": "verified",
-                "rating": {"1": "Excellent", "2":"Good", "3":"Fair" },
-                "mobileNumber": "d",
-                "description": "d"
-            }
-        ]
+        "category_id": 1,
+        "picture": "https://i.ibb.co/L6McNz8/NY2963-main.jpg",
+        "productName": "DKNY Stanhope Three-Hand Stainless Steel Watch",
+        "location": "Dhaka",
+        "resalePrice": 67.99,
+        "originalPrice": 135.00,
+        "yearsUse": "1",
+        "postedDate": "April 28, 2022",
+        "sellerName": "Orin Tez",
+        "status": "Unverified",
+        "rating": {
+            "1": "Excellent",
+            "2": "Good",
+            "3": "Fair"
+        },
+        "mobileNumber": "+880 1512399776",
+        "description": "The Stanhope watch by DKNY combines signature style elements with new feminine details. With a five-link bracelet from the heritage design and new t-bar lugs."
     },
     {
-        "name": "Kid's Watches",
-        "imgURL": "https://i.ibb.co/8bbsg7T/98297f3a5279c5d346e50380a29dc56b.jpg",
-        "products": [
-            {
-                "picture": "dkd",
-                "productName": "d",
-                "location": "d",
-                "resalePrice": "d",
-                "originalPrice": "d",
-                "yearsUse": "d",
-                "postedDate": "d",
-                "sellerName": "d",
-                "status": "verified",
-                "rating": {"1": "Excellent", "2":"Good", "3":"Fair" },
-                "mobileNumber": "d",
-                "description": "d"
-            },
-            {
-                "picture": "dkd",
-                "productName": "d",
-                "location": "d",
-                "resalePrice": "d",
-                "originalPrice": "d",
-                "yearsUse": "d",
-                "postedDate": "d",
-                "sellerName": "d",
-                "status": "verified",
-                "rating": {"1": "Excellent", "2":"Good", "3":"Fair" },
-                "mobileNumber": "d",
-                "description": "d"
-            }
-        ]
+        "category_id": 2,
+        "picture": "https://i.ibb.co/Gc0WzRv/AR2482-main.jpg",
+        "productName": "Emporio Armani Men's Chronograph Brown Leather Watch",
+        "location": "Dhaka",
+        "resalePrice": 275.00,
+        "originalPrice": 375.00,
+        "yearsUse": "2",
+        "postedDate": "May 28, 2022 ",
+        "sellerName": "Brown Jos",
+        "status": "Unverified",
+        "rating": {"1": "Excellent", "2":"Good", "3":"Fair" },
+        "mobileNumber": "+880 1512399776",
+        "description": "Emporio Armani expresses vitality and a carefree attitude, and possesses a particular allure and a special graciousness. ·41mm case, 20mm band width."
+    },
+    {
+        "category_id": 2,
+        "picture": "https://i.ibb.co/VBFjhf4/BMW7000-main.jpg",
+        "productName": "BMW Men's Chronograph Brown Leather Watch",
+        "location": "Dhaka",
+        "resalePrice": 138.00,
+        "originalPrice": 275.00,
+        "yearsUse": "1",
+        "postedDate": "June 28, 2022 ",
+        "sellerName": "Choron Brown",
+        "status": "Unverified",
+        "rating": {"1": "Excellent", "2":"Good", "3":"Fair" },
+        "mobileNumber": "+880 1512399776",
+        "description": "This 44mm watch features a blue and black sunray dial with numeral indexes and a bmw logo, chronograph movement and padded brown leather strap."
+    },
+    {
+        "category_id": 3,
+        "picture": "https://i.ibb.co/bzQjhJb/81-Ez-Cpx4-E4-L-AC-UX522.jpg",
+        "productName": "TIMEX TIME MACHINES",
+        "location": "Dhaka",
+        "resalePrice": 25.00,
+        "originalPrice": 30.00,
+        "yearsUse": "1",
+        "postedDate": "July 28, 2022 ",
+        "sellerName": "Timer Roy",
+        "status": "Unverified",
+        "rating": {"1": "Excellent", "2":"Good", "3":"Fair" },
+        "mobileNumber": "+880 1512399776",
+        "description": "Timex makes watches that are designed specifically for kids in a variety of styles. These colorful and durable kids watches feature adjustable elastic fabric bands that make it easy for kids to put on and take off, an easy-to-read dial, minute markers and water resistance up to 30 meters."
+    },
+    {
+        "category_id": 3,
+        "picture": "https://i.ibb.co/GWnGrhV/Lasika-W-F100-waterproof-30-meters-watch-for-kids-jam-tangan-budak.jpg",
+        "productName": "Lasika Kids Waterproof Digital Wrist Watch",
+        "location": "Dhaka",
+        "resalePrice": 100.00,
+        "originalPrice": 200.00,
+        "yearsUse": "1",
+        "postedDate": "August 28, 2022 ",
+        "sellerName": "Layla Tis",
+        "status": "Unverified",
+        "rating": {"1": "Excellent", "2":"Good", "3":"Fair" },
+        "mobileNumber": "+880 1512399776",
+        "description": "Lasika Kids Waterproof Digital Wrist Watch for Kids - Blue. Item Type: Wrist watch. Case Material: High Quality Plastic. Dial Window Material Type: Digital."
     }
 ]

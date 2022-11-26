@@ -18,6 +18,7 @@ async function run() {
         const watchesCategoryCollection = client.db('productCategory').collection('categories');
         const watchesProductsCollection = client.db('productCategory').collection('products');
         const usersCollection = client.db('productCategory').collection('users');
+        const bookingsCollection = client.db('productCategory').collection('bookings');
 
         app.get('/category', async (req, res) => {
             const query = {};
@@ -34,6 +35,12 @@ async function run() {
 
         app.get('/users/allSellers', async(req, res)=>{
             const query = {value : 'Seller'};
+            const users = await usersCollection.find(query).toArray();
+            res.send(users);
+        })
+
+        app.get('/users/allBuyers', async(req, res)=>{
+            const query = {value : 'Buyer'};
             const users = await usersCollection.find(query).toArray();
             res.send(users);
         })
@@ -62,6 +69,21 @@ async function run() {
             const result = await usersCollection.insertOne(user);
             res.send(result);
         })
+
+        app.post('/bookings', async (req, res) => {
+            const booking = req.body;
+            const query = {
+                email: booking.email,
+                productName: booking.productName
+            }
+            const alreadyBooked = await bookingsCollection.find(query).toArray();
+            if (alreadyBooked.length) {
+                const message = `You have already booked ${booking.productName}`;
+                return res.send({ acknowledged: false, message });
+            }
+            const result = await bookingsCollection.insertOne(booking);
+            res.send(result);
+        });
         
     }
     finally {

@@ -17,6 +17,7 @@ async function run() {
     try {
         const watchesCategoryCollection = client.db('productCategory').collection('categories');
         const watchesProductsCollection = client.db('productCategory').collection('products');
+        const usersCollection = client.db('productCategory').collection('users');
 
         app.get('/category', async (req, res) => {
             const query = {};
@@ -30,6 +31,13 @@ async function run() {
             const result = await watchesProductsCollection.find(query).toArray();
             res.send(result);
         })
+
+        app.post('/users', async(req, res)=>{
+            const user = req.body;
+            const result = await usersCollection.insertOne(user);
+            res.send(result);
+        })
+        
     }
     finally {
 

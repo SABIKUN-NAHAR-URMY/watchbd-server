@@ -33,6 +33,13 @@ async function run() {
             res.send(result);
         })
 
+        app.get('/products/:email', async (req, res) => {
+            const email = req.params.email;
+            const query = { email: email };
+            const result = await watchesProductsCollection.find(query).toArray();
+            res.send(result);
+        })
+
         app.post('/products', async (req, res) => {
             const product = req.body;
             const result = await watchesProductsCollection.insertOne(product);

@@ -32,6 +32,12 @@ async function run() {
             res.send(result);
         })
 
+        app.get('/users/allSellers', async(req, res)=>{
+            const query = {value : 'Seller'};
+            const users = await usersCollection.find(query).toArray();
+            res.send(users);
+        })
+
         app.get('/users/admin/:email', async (req, res) => {
             const email = req.params.email;
             const query = { email };

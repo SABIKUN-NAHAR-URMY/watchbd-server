@@ -33,6 +33,12 @@ async function run() {
             res.send(result);
         })
 
+        app.post('/products', async (req, res) => {
+            const product = req.body;
+            const result = await watchesProductsCollection.insertOne(product);
+            res.send(result);
+        });
+
         app.get('/users/allSellers', async(req, res)=>{
             const query = {value : 'Seller'};
             const users = await usersCollection.find(query).toArray();
@@ -74,12 +80,11 @@ async function run() {
             const booking = req.body;
             const query = {
                 email: booking.email,
-                productName: booking.productName
+                itemName: booking.itemName
             }
             const alreadyBooked = await bookingsCollection.find(query).toArray();
             if (alreadyBooked.length) {
-                const message = `You have already booked ${booking.productName}`;
-                return res.send({ acknowledged: false, message });
+                return res.send({ acknowledged: false});
             }
             const result = await bookingsCollection.insertOne(booking);
             res.send(result);

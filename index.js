@@ -42,6 +42,13 @@ async function run() {
             res.send(result);
         })
 
+        app.delete('/myProducts/:id', async(req, res)=>{
+            const id = req.params.id;
+            const query = {_id: ObjectId(id)};
+            const result = await watchesProductsCollection.deleteOne(query);
+            res.send(result);
+        })
+
         app.post('/products', async (req, res) => {
             const product = req.body;
             const result = await watchesProductsCollection.insertOne(product);
@@ -52,6 +59,13 @@ async function run() {
             const query = {value : 'Seller'};
             const users = await usersCollection.find(query).toArray();
             res.send(users);
+        })
+
+        app.delete('/users/allSellers/:id', async(req, res)=>{
+            const id = req.params.id;
+            const query = {_id: ObjectId(id)};
+            const result = await usersCollection.deleteOne(query);
+            res.send(result);
         })
 
         app.get('/users/allBuyers', async(req, res)=>{

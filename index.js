@@ -21,6 +21,7 @@ async function run() {
         const usersCollection = client.db('productCategory').collection('users');
         const bookingsCollection = client.db('productCategory').collection('bookings');
         const paymentsCollection = client.db('productCategory').collection('payments');
+        const advertiseCollection = client.db('productCategory').collection('advertise');
 
         app.get('/category', async (req, res) => {
             const query = {};
@@ -169,6 +170,12 @@ async function run() {
                 return res.send({ acknowledged: false});
             }
             const result = await bookingsCollection.insertOne(booking);
+            res.send(result);
+        });
+
+        app.post('/advertise', async (req, res) => {
+            const advertise = req.body;
+            const result = await advertiseCollection.insertOne(advertise);
             res.send(result);
         });
         

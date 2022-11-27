@@ -43,9 +43,9 @@ async function run() {
             res.send(result);
         })
 
-        app.delete('/myProducts/:id', async(req, res)=>{
+        app.delete('/myProducts/:id', async (req, res) => {
             const id = req.params.id;
-            const query = {_id: ObjectId(id)};
+            const query = { _id: ObjectId(id) };
             const result = await watchesProductsCollection.deleteOne(query);
             res.send(result);
         })
@@ -56,28 +56,28 @@ async function run() {
             res.send(result);
         });
 
-        app.get('/users/allSellers', async(req, res)=>{
-            const query = {value : 'Seller'};
+        app.get('/users/allSellers', async (req, res) => {
+            const query = { value: 'Seller' };
             const users = await usersCollection.find(query).toArray();
             res.send(users);
         })
 
-        app.delete('/users/allSellers/:id', async(req, res)=>{
+        app.delete('/users/allSellers/:id', async (req, res) => {
             const id = req.params.id;
-            const query = {_id: ObjectId(id)};
+            const query = { _id: ObjectId(id) };
             const result = await usersCollection.deleteOne(query);
             res.send(result);
         })
 
-        app.get('/users/allBuyers', async(req, res)=>{
-            const query = {value : 'Buyer'};
+        app.get('/users/allBuyers', async (req, res) => {
+            const query = { value: 'Buyer' };
             const users = await usersCollection.find(query).toArray();
             res.send(users);
         })
 
-        app.delete('/users/allBuyers/:id', async(req, res)=>{
+        app.delete('/users/allBuyers/:id', async (req, res) => {
             const id = req.params.id;
-            const query = {_id: ObjectId(id)};
+            const query = { _id: ObjectId(id) };
             const result = await usersCollection.deleteOne(query);
             res.send(result);
         })
@@ -101,7 +101,7 @@ async function run() {
             res.send({ isBuyer: user?.value === 'Buyer' });
         })
 
-        app.post('/users', async(req, res)=>{
+        app.post('/users', async (req, res) => {
             const user = req.body;
             const result = await usersCollection.insertOne(user);
             res.send(result);
@@ -115,38 +115,38 @@ async function run() {
             res.send(result);
         })
 
-        app.get('/bookings/:id', async(req, res)=>{
+        app.get('/bookings/:id', async (req, res) => {
             const id = req.params.id;
-            const query = {_id: ObjectId(id)};
+            const query = { _id: ObjectId(id) };
             const booking = await bookingsCollection.findOne(query);
             res.send(booking);
         })
 
-        app.post('/create-payment-intent', async(req, res) =>{
+        app.post('/create-payment-intent', async (req, res) => {
             const booking = req.body;
             const price = parseFloat(booking.price);
             const amount = parseInt(price * 100);
 
             const paymentIntent = await stripe.paymentIntents.create({
-                currency : 'usd',
+                currency: 'usd',
                 amount: amount,
                 "payment_method_types": [
                     "card"
-                  ]
+                ]
             });
 
             res.send({
                 clientSecret: paymentIntent.client_secret,
-              });
+            });
         })
 
-        app.post('/payments', async(req, res)=>{
+        app.post('/payments', async (req, res) => {
             const payment = req.body;
             const result = await paymentsCollection.insertOne(payment);
 
             const id = payment.bookingId;
-            const filter = {_id: ObjectId(id)};
-            const query = {bookingId: id};
+            const filter = { _id: ObjectId(id) };
+            const query = { bookingId: id };
             const updateDoc = {
                 $set: {
                     paid: true,
@@ -155,7 +155,7 @@ async function run() {
             }
             const updateResult = await bookingsCollection.updateOne(query, updateDoc);
             const updateProduct = await watchesProductsCollection.updateOne(filter, updateDoc);
-
+            const updateAdvertise = await advertiseCollection.findOneAndDelete({productId: id});
             res.send(result);
         })
 
@@ -167,7 +167,7 @@ async function run() {
             }
             const alreadyBooked = await bookingsCollection.find(query).toArray();
             if (alreadyBooked.length) {
-                return res.send({ acknowledged: false});
+                return res.send({ acknowledged: false });
             }
             const result = await bookingsCollection.insertOne(booking);
             res.send(result);
@@ -187,12 +187,12 @@ async function run() {
             }
             const alreadyAdvertise = await advertiseCollection.find(query).toArray();
             if (alreadyAdvertise.length) {
-                return res.send({ acknowledged: false});
+                return res.send({ acknowledged: false });
             }
             const result = await advertiseCollection.insertOne(advertise);
             res.send(result);
         });
-        
+
     }
     finally {
 

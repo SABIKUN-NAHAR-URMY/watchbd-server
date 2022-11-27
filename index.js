@@ -173,8 +173,22 @@ async function run() {
             res.send(result);
         });
 
+        app.get('/advertise', async (req, res) => {
+            const query = {};
+            const result = await advertiseCollection.find(query).toArray();
+            res.send(result);
+        })
+
         app.post('/advertise', async (req, res) => {
             const advertise = req.body;
+            const query = {
+                email: advertise.email,
+                productName: advertise.productName
+            }
+            const alreadyAdvertise = await advertiseCollection.find(query).toArray();
+            if (alreadyAdvertise.length) {
+                return res.send({ acknowledged: false});
+            }
             const result = await advertiseCollection.insertOne(advertise);
             res.send(result);
         });

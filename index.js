@@ -56,6 +56,12 @@ async function run() {
             res.send(result);
         });
 
+        app.get('/users', async(req, res)=>{
+            const query = {};
+            const users = await usersCollection.find(query).toArray();
+            res.send(users);
+        })
+
         app.get('/users/allSellers', async (req, res) => {
             const query = { value: 'Seller' };
             const users = await usersCollection.find(query).toArray();
@@ -104,6 +110,20 @@ async function run() {
         app.post('/users', async (req, res) => {
             const user = req.body;
             const result = await usersCollection.insertOne(user);
+            res.send(result);
+        })
+
+        app.put('/users/:id', async(req, res)=>{
+            const id = req.params.id;
+            const filter = {_id: ObjectId(id)};
+            const user = req.body;
+            const option = {upsert : true};
+            const updateDoc ={
+                $set: {
+                    status: 'Verified '
+                }
+            }
+            const result = await usersCollection.updateOne(filter, updateDoc, option);
             res.send(result);
         })
 

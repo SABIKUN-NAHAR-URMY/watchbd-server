@@ -102,11 +102,11 @@ async function run() {
             res.send({ isSeller: user?.value === 'Seller' });
         })
 
-        app.get('/users/seller/:email', async (req, res) => {
+        app.get('/users/sellerVerify/:email', async (req, res) => {
             const email = req.params.email;
             const query = { email };
             const user = await usersCollection.findOne(query);
-            res.send({ isSeller: user?.status === 'Verified' });
+            res.send({isVerified: user?.status});
         })
 
         app.get('/users/buyer/:email', async (req, res) => {
@@ -245,7 +245,8 @@ async function run() {
             const id = req.params.id;
             const query = { _id: ObjectId(id) };
             const result = await watchesProductsCollection.deleteOne(query);
-            res.send(result);
+            const resultData = await reportedCollection.deleteOne({_id: id });
+            res.send(resultData);
         })
 
     }

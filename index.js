@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
+const jwt = require('jsonwebtoken');
 require('dotenv').config();
 const stripe = require("stripe")(process.env.STRIPE_SK);
 const port = process.env.PORT || 5000;
@@ -13,6 +14,7 @@ app.use(express.json());
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.ho0d8c2.mongodb.net/?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+
 
 async function run() {
     try {
@@ -118,6 +120,14 @@ async function run() {
 
         app.post('/users', async (req, res) => {
             const user = req.body;
+            const query = {
+                email: user.email,
+                value: user.value    
+            }
+            const alreadySignup = await usersCollection.find(query).toArray();
+            if (alreadySignup.length) {
+                return res.send({ acknowledged: false });
+            }
             const result = await usersCollection.insertOne(user);
             res.send(result);
         })

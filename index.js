@@ -50,7 +50,8 @@ async function run() {
             const id = req.params.id;
             const query = { _id: ObjectId(id) };
             const result = await watchesProductsCollection.deleteOne(query);
-            res.send(result);
+            const resultData = await advertiseCollection.deleteOne({productId : id});
+            res.send(resultData);
         })
 
         app.post('/products', async (req, res) => {

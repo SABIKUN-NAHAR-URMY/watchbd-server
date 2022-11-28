@@ -22,6 +22,7 @@ async function run() {
         const bookingsCollection = client.db('productCategory').collection('bookings');
         const paymentsCollection = client.db('productCategory').collection('payments');
         const advertiseCollection = client.db('productCategory').collection('advertise');
+        const reportedCollection = client.db('productCategory').collection('reported');
 
         app.get('/category', async (req, res) => {
             const query = {};
@@ -100,6 +101,14 @@ async function run() {
             const user = await usersCollection.findOne(query);
             res.send({ isSeller: user?.value === 'Seller' });
         })
+
+        app.get('/users/seller/:email', async (req, res) => {
+            const email = req.params.email;
+            const query = { email };
+            const user = await usersCollection.findOne(query);
+            res.send({ isSeller: user?.status === 'Verified' });
+        })
+
         app.get('/users/buyer/:email', async (req, res) => {
             const email = req.params.email;
             const query = { email };
@@ -126,7 +135,6 @@ async function run() {
             const result = await usersCollection.updateOne(filter, updateDoc, option);
             res.send(result);
         })
-
 
         app.get('/myOrders/:email', async (req, res) => {
             const email = req.params.email;
@@ -212,6 +220,33 @@ async function run() {
             const result = await advertiseCollection.insertOne(advertise);
             res.send(result);
         });
+
+        app.get('/reported', async (req, res) => {
+            const query = {};
+            const result = await reportedCollection.find(query).toArray();
+            res.send(result);
+        })
+
+        app.post('/reported', async(req, res)=>{
+            const reported = req.body;
+            const query = {
+                email: reported.email,
+                productName: reported.productName
+            }
+            const alreadyReported = await reportedCollection.find(query).toArray();
+            if (alreadyReported.length) {
+                return res.send({ acknowledged: false });
+            }
+            const result = await reportedCollection.insertOne(reported);
+            res.send(result);
+        })
+
+        app.delete('/reported/:id', async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: ObjectId(id) };
+            const result = await watchesProductsCollection.deleteOne(query);
+            res.send(result);
+        })
 
     }
     finally {
